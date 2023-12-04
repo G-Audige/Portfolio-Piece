@@ -1,13 +1,12 @@
 import React from 'react'
-// eslint-disable-next-line
 import { Route, Routes } from 'react-router-dom';
-//
+// Pages
 import Main from '../pages/Main';
 import Projects from '../pages/Projects';
 
 function Content() {
   return (
-    <div className='content'>
+    <div id='content'>
         <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/projects' element={<Projects/>}/>

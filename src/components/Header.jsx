@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 // eslint-disable-next-line
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className='header'>Header</div>
-  )
+    <div id="header">
+      <Link to="/">Main</Link>
+      <Link to="/projects">Projects</Link>
+    </div>
+  );
 }
 
-export default Header
+export default Header;
