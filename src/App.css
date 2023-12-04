@@ -1,38 +1,49 @@
+/* -----Default----- */
+/* Tags */
+/* Classes */
 .App {
+  
+}
+.content {
+  min-width: 100vh;
+}
+.footer {
+  background-color: aqua;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  background-color: aqua;
+  text-align: center;
 }
+/* Ids */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* -----Media Queries----- */
+/* ---Large--- */
+@media screen and (max-width: 1280px) {
+  /* Tags */
+  /* Classes */
+  .header {
+    background-color: blue;
   }
+  /* Ids */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---Medium--- */
+@media screen and (max-width: 880px) {
+  /* Tags */
+  /* Classes */
+  .header {
+    background-color: red;
   }
-  to {
-    transform: rotate(360deg);
+  /* Ids */
+}
+
+/* ---Small--- */
+@media screen and (max-width: 480px) {
+  /* Tags */
+  /* Classes */
+  .header {
+    background-color: yellow;
   }
+  /* Ids */
 }
