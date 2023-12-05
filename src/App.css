@@ -1,28 +1,26 @@
 /* -----Default----- */
 /* Tags */
 /* Classes */
-/* .App {
-  
-} */
-
 /* Ids */
 #content {
-  border: solid black;
+  padding-top: 10vh;
   min-height: 100vh;
 }
 #footer {
   background-color: aqua;
+  height: 10vh;
   text-align: center;
 }
 #header {
   background-color: aqua;
+
   display: flex;
+  height: 10vh;
   justify-content: space-between;
+  position: fixed;
   text-align: center;
+  width: 100vw;
 }
-/* #projects-link-container {
-  background-color: aqua;
-} */
 
 /* -----Media Queries----- */
 /* ---Large--- */
