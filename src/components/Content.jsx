@@ -12,7 +12,7 @@ function Content() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/projects' element={<Projects />} />
-        <Route path='/music' element={<Music />} />
+        {/* <Route path='/music' element={<Music />} /> */}
         <Route path='/books' element={<Books />} />
       </Routes>
     </div>

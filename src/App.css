@@ -1,6 +1,10 @@
 /* -----Default----- */
 /* Tags */
 /* Classes */
+.catalogue {
+  display: flex;
+  flex-wrap: wrap;
+}
 /* Ids */
 #content {
   padding-top: 10vh;
