@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 // Components
 import Form from '../components/Form';
-import SearchDisplay from '../components/MusicSearchDisplay';
+import SearchDisplay from '../components/BookSearchDisplay';
 
 //Hooks
 import { useEffect, useState } from 'react';
@@ -28,7 +28,7 @@ function Books() {
       getBook(book);
     }
     // eslint-disable-next-line
-  }, []);
+  }, [setBook]);
 
   return (
     <div className='books'>

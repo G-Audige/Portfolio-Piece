@@ -8,12 +8,16 @@ function SearchDisplay(props) {
     return (
       <div className='catalogue'>
         {items.map((item) => {
+          console.log(item);
+          let image;
+          if (typeof item.volumeInfo.imageLinks == 'undefined') {
+            image = 'NoImage.png';
+          } else {
+            image = item.volumeInfo.imageLinks.thumbnail;
+          }
           return (
-            <div className='item' key={item.id}>
-              <img
-                src={item.volumeInfo.imageLinks.thumbnail}
-                alt={item.volumeInfo.title}
-              />
+            <div className='book' key={item.id}>
+              <img src={image} alt={item.volumeInfo.title} className='image' />
               <p>{item.volumeInfo.title}</p>
             </div>
           );

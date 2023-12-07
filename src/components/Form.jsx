@@ -12,12 +12,16 @@ function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.search(formData.searchterm);
+    if (formData.searchterm) {
+      props.search(formData.searchterm);
+    } else {
+      props.search(e);
+    }
     console.log(formData);
   };
 
   return (
-    <div className='form'>
+    <div id='form'>
       <form onSubmit={handleSubmit}>
         <input
           autoComplete='on'
