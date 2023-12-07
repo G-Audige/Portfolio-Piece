@@ -11,15 +11,20 @@
 }
 .book {
   border: 1px solid gray;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  text-align: center;
   padding: 5px 5px 5px 5px;
   width: 22vw;
 }
 .image {
   height: 150px;
 }
+.searchbar {
+  width: 89%;
+}
+.searchButton {
+  width: 10%;
+}
+
 .default {
   display: block;
 }
@@ -43,7 +48,8 @@
   text-align: center;
 }
 #form {
-  margin-left: 10px;
+  border: 1px solid black;
+  margin: 0px 10px 0px 10px;
 }
 #header {
   background-color: aqua;

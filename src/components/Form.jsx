@@ -30,8 +30,9 @@ function Form(props) {
           placeholder='Search...'
           type='text'
           value={formData.searchterm}
+          className='searchbar'
         />
-        <input type='submit' value='Search' />
+        <input type='submit' value='Search' className='searchButton' />
       </form>
     </div>
   );

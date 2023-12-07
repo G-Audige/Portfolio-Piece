@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // Pages
+import BookInfo from '../pages/BookInfo';
 import Books from '../pages/Books';
 import Main from '../pages/Main';
-import Music from '../pages/Music';
 import Projects from '../pages/Projects';
 
 function Content() {
@@ -12,8 +12,8 @@ function Content() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/projects' element={<Projects />} />
-        {/* <Route path='/music' element={<Music />} /> */}
         <Route path='/books' element={<Books />} />
+        <Route path='/books/:title' element={<BookInfo />} />
       </Routes>
     </div>
   );
