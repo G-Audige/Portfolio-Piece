@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React from 'react';
 // Components
 import Form from '../components/Form';

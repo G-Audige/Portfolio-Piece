@@ -7,8 +7,6 @@ function SearchDisplay(props) {
     if (typeof items == 'undefined') {
       loading();
     } else {
-      console.log('Loaded: ', items[0].volumeInfo.title);
-      console.log('Loaded: ', items[0]);
       return (
         <div className='catalogue'>
           {items.map((item) => {
