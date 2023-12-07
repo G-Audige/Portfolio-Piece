@@ -8,6 +8,12 @@ function Header() {
       <Link to='/'>
         <p>Main</p>
       </Link>
+      <div>
+        <h2 className='default'>Default</h2>
+        <h2 className='large'>Large</h2>
+        <h2 className='medium'>Medium</h2>
+        <h2 className='small'>Small</h2>
+      </div>
       <div className='dropdown-container'>
         Explore
         <Link to='/projects'>

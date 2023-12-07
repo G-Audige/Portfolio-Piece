@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 // Components
 import Form from '../components/Form';
-import SearchDisplay from '../components/SearchDisplay';
+import SearchDisplay from '../components/MusicSearchDisplay';
 
 //Hooks
 import { useEffect, useState } from 'react';
@@ -24,7 +24,9 @@ function Books() {
     }
   };
   useEffect(() => {
-    getBook('Undefined');
+    if (book) {
+      getBook(book);
+    }
     // eslint-disable-next-line
   }, []);
 

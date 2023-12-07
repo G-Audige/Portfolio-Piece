@@ -4,12 +4,16 @@ function SearchDisplay(props) {
   const loaded = () => {
     const items = props.searchterm.items;
     console.log('Loaded: ', items[0].volumeInfo.title);
+    console.log('Loaded: ', items[0]);
     return (
       <div className='catalogue'>
         {items.map((item) => {
           return (
-            <div>
-              <img src={item.volumeInfo.imageLinks.thumbnail} />
+            <div className='item' key={item.id}>
+              <img
+                src={item.volumeInfo.imageLinks.thumbnail}
+                alt={item.volumeInfo.title}
+              />
               <p>{item.volumeInfo.title}</p>
             </div>
           );
@@ -20,7 +24,11 @@ function SearchDisplay(props) {
   const loading = () => {
     console.log('Loading: ', props);
     // console.log('Prop: ', props.items[0].volumeInfo.title);
-    return <h1>Loading...</h1>;
+    return (
+      <div className='catalogue'>
+        <h1>Loading...</h1>
+      </div>
+    );
   };
   return props.searchterm ? loaded() : loading();
 }

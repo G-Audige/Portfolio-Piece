@@ -2,12 +2,20 @@
 /* Tags */
 /* Classes */
 .catalogue {
+  border: 1px solid gray;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px 10px 5px 10px;
+  padding: 5px 10px 5px 10px;
+}
+
+.item {
+  width: 22vw;
 }
 /* Ids */
 #content {
-  padding-top: 10vh;
+  padding-top: 20vh;
   min-height: 100vh;
 }
 #footer {
@@ -17,13 +25,24 @@
 }
 #header {
   background-color: aqua;
-
   display: flex;
-  height: 10vh;
   justify-content: space-between;
   position: fixed;
   text-align: center;
   width: 100vw;
+}
+
+.default {
+  display: block;
+}
+.large {
+  display: none;
+}
+.medium {
+  display: none;
+}
+.small {
+  display: none;
 }
 
 /* -----Media Queries----- */
@@ -31,28 +50,55 @@
 @media screen and (max-width: 1280px) {
   /* Tags */
   /* Classes */
-  /* Ids */
-  #header {
-    background-color: blue;
+  .default {
+    display: none;
   }
+  .large {
+    display: block;
+  }
+  .medium {
+    display: none;
+  }
+  .small {
+    display: none;
+  }
+  /* Ids */
 }
 
 /* ---Medium--- */
 @media screen and (max-width: 880px) {
   /* Tags */
   /* Classes */
-  /* Ids */
-  #header {
-    background-color: red;
+  .default {
+    display: none;
   }
+  .large {
+    display: none;
+  }
+  .medium {
+    display: block;
+  }
+  .small {
+    display: none;
+  }
+  /* Ids */
 }
 
 /* ---Small--- */
 @media screen and (max-width: 480px) {
   /* Tags */
   /* Classes */
-  /* Ids */
-  #header {
-    background-color: yellow;
+  .default {
+    display: none;
   }
+  .large {
+    display: none;
+  }
+  .medium {
+    display: none;
+  }
+  .small {
+    display: block;
+  }
+  /* Ids */
 }
