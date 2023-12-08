@@ -16,6 +16,7 @@
 }
 #description {
   background-color: #eef6fc;
+  border: 1px solid gray;
   margin: auto;
   width: 80%;
 }
@@ -192,10 +193,26 @@
 /* ---Small--- */
 @media screen and (max-width: 480px) {
   /* Tags */
+  /* Ids */
+  #info-box-left {
+    width: 100%;
+  }
+  #info-box-right {
+    width: 100%;
+  }
   /* Classes */
   .book {
     padding: 5px 5px 5px 5px;
     width: 45vw;
+  }
+  .info-box {
+    border: 1px solid gray;
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: auto;
+    text-align: left;
+    width: 80%;
   }
   .image {
     height: 43vw;
@@ -213,5 +230,4 @@
   .small {
     display: block;
   }
-  /* Ids */
 }
