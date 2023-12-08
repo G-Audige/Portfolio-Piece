@@ -19,7 +19,7 @@ function SearchDisplay(props) {
             }
             return (
               <div className='book' key={item.id}>
-                <Link to={`/Books/${item.volumeInfo.title}`}>
+                <Link to={`/Books/${item.volumeInfo.title}/${item.id}`}>
                   <img
                     src={image}
                     alt={item.volumeInfo.title}

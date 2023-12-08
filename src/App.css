@@ -22,7 +22,7 @@
   width: 89%;
 }
 .searchButton {
-  width: 10%;
+  width: 9%;
 }
 
 .default {
@@ -50,6 +50,7 @@
 #form {
   border: 1px solid black;
   margin: 0px 10px 0px 10px;
+  width: 90%;
 }
 #header {
   background-color: aqua;

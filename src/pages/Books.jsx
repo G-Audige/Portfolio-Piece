@@ -13,7 +13,7 @@ function Books() {
   const getBook = async (searchterm) => {
     try {
       const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&maxResults=40`
       );
       const data = await response.json();
       setBook(data);
