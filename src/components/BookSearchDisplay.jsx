@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 function SearchDisplay(props) {
   const loaded = () => {
     const items = props.searchterm.items;
+    console.log(items);
     if (typeof items == 'undefined') {
       loading();
     } else {
       return (
         <div className='catalogue'>
           {items.map((item) => {
-            console.log(item);
             let image;
             if (typeof item.volumeInfo.imageLinks == 'undefined') {
               image = 'NoImage.png';
@@ -35,7 +35,7 @@ function SearchDisplay(props) {
     }
   };
   const loading = () => {
-    console.log('Loading: ', props);
+    // console.log('Loading: ', props);
     // console.log('Prop: ', props.items[0].volumeInfo.title);
     return (
       <div className='catalogue'>

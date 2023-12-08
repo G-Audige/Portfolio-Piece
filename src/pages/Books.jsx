@@ -18,7 +18,7 @@ function Books() {
       );
       const data = await response.json();
       setBook(data);
-      console.log('Current batch: ', book);
+      // console.log('Current batch: ', book);
     } catch (e) {
       console.error(e);
     }

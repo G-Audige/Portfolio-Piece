@@ -17,6 +17,14 @@
 }
 .image {
   height: 11vw;
+  max-width: 100%;
+}
+.info-box {
+  border: 1px solid gray;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: left;
 }
 .searchbar {
   border: transparent;
@@ -43,8 +51,8 @@
   display: none;
 }
 /* Ids */
-#books {
-}
+/* #books {
+} */
 #book-info {
   text-align: center;
 }

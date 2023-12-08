@@ -21,7 +21,7 @@ function BookInfo() {
       );
       const data = await response.json();
       setBook(data);
-      console.log('Current batch: ', book);
+      // console.log('Current batch: ', book);
     } catch (e) {
       console.error(e);
     }
@@ -31,7 +31,7 @@ function BookInfo() {
     // eslint-disable-next-line
   }, []);
   const loaded = () => {
-    console.log('Show book: ', book);
+    // console.log('Show book: ', book);
     const item = book;
     let image;
     console.log(item.volumeInfo.imageLinks);
@@ -43,7 +43,16 @@ function BookInfo() {
     return (
       <div id='book-info'>
         <h2>{item.volumeInfo.title}</h2>
-        <img src={image} alt={item.volumeInfo.title} className='image' />
+        <div className='info-box'>
+          <img src={image} alt={item.volumeInfo.title} className='image' />
+          <div>
+            <div>Author: {item.volumeInfo.authors}</div>
+            <div>Publisher: {item.volumeInfo.publisher}</div>
+            <div>Published Date: {item.volumeInfo.publishedDate}</div>
+            <div>Page Count: {item.volumeInfo.pageCount}</div>
+          </div>
+        </div>
+        <div>Description</div>
       </div>
     );
   };
