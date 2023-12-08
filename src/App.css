@@ -38,6 +38,11 @@
   display: none;
 }
 /* Ids */
+#books {
+}
+#book-info {
+  text-align: center;
+}
 #content {
   padding-top: 150px;
   min-height: 100vh;

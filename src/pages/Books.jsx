@@ -7,6 +7,7 @@ import SearchDisplay from '../components/BookSearchDisplay';
 import { useEffect, useState } from 'react';
 
 function Books() {
+  window.scrollTo(0, 0);
   const [book, setBook] = useState('');
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
 
@@ -30,7 +31,7 @@ function Books() {
   }, [setBook]);
 
   return (
-    <div className='books'>
+    <div id='books'>
       Books
       <Form search={getBook} />
       <SearchDisplay searchterm={book} />

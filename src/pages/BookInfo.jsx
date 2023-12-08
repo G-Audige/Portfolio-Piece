@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function BookInfo() {
+  window.scrollTo(0, 0);
   console.log('Book info page.');
   const params = useParams();
   const id = params.id;
@@ -40,9 +41,9 @@ function BookInfo() {
       image = item.volumeInfo.imageLinks.thumbnail;
     }
     return (
-      <div>
+      <div id='book-info'>
+        <h2>{item.volumeInfo.title}</h2>
         <img src={image} alt={item.volumeInfo.title} className='image' />
-        <p>{item.volumeInfo.title}</p>
       </div>
     );
   };
