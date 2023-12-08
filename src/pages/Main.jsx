@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 function Main() {
-  return (
-    <div>
-        Main
-    </div>
-  )
+  window.scrollTo(0, 0);
+  return <div>Main</div>;
 }
 
-export default Main
+export default Main;

@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 function Projects() {
-  return (
-    <div>Projects</div>
-  )
+  window.scrollTo(0, 0);
+  return <div>Projects</div>;
 }
 
-export default Projects
+export default Projects;
