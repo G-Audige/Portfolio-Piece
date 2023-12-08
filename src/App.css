@@ -1,5 +1,71 @@
 /* -----Default----- */
 /* Tags */
+
+/* Ids */
+#books {
+  width: 95%;
+}
+#book-info {
+  width: 95%;
+}
+#content {
+  background-color: #3aafb9;
+  padding-top: 150px;
+  padding-bottom: 20px;
+  min-height: 100vh;
+}
+#description {
+  background-color: #eef6fc;
+  margin: auto;
+  width: 80%;
+}
+#footer {
+  background-color: #001011;
+  color: white;
+  height: 10vh;
+  text-align: center;
+}
+#form {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+#header {
+  background-color: #001011;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+}
+#header p {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+#header p:hover {
+  color: #97c8eb;
+}
+#info-box-left {
+  background-color: white;
+  height: 100%;
+  text-align: center;
+  width: 50%;
+}
+#info-box-left img {
+  height: 200px;
+}
+#info-box-right {
+  background-color: #eef6fc;
+  min-height: 100%;
+  width: 50%;
+}
+
 /* Classes */
 .book {
   border: 1px solid gray;
@@ -18,8 +84,15 @@
   border: 1px solid gray;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: auto;
   text-align: left;
+  width: 80%;
+}
+
+.page {
+  margin: auto;
+  text-align: center;
 }
 .searchbar {
   border: transparent;
@@ -59,55 +132,6 @@
 }
 .small {
   display: none;
-}
-/* Ids */
-#books {
-  text-align: center;
-}
-#book-info {
-  text-align: center;
-}
-#content {
-  background-color: #3aafb9;
-  padding-top: 150px;
-  padding-bottom: 20px;
-  min-height: 100vh;
-}
-#content div:first-child {
-  width: 95%;
-  margin: auto;
-}
-#footer {
-  background-color: #001011;
-  color: white;
-  height: 10vh;
-  text-align: center;
-}
-#form {
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 5px;
-  margin: auto;
-  margin-bottom: 10px;
-  padding: 5px;
-}
-#header {
-  background-color: #001011;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
-  width: 100vw;
-}
-#header p {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-}
-#header p:hover {
-  color: #97c8eb;
 }
 
 /* -----Media Queries----- */

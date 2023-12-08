@@ -32,7 +32,7 @@ function Books() {
   }, [setBook]);
 
   return (
-    <div id='books'>
+    <div id='books' className='page'>
       <h2>Book Search</h2>
       <Form search={getBook} />
       <SearchDisplay searchterm={book} />

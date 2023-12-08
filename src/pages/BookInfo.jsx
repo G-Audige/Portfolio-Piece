@@ -41,22 +41,24 @@ function BookInfo() {
       image = item.volumeInfo.imageLinks.thumbnail;
     }
     return (
-      <div id='book-info'>
+      <div id='book-info' className='page'>
         <h2>{item.volumeInfo.title}</h2>
         <div className='info-box'>
-          <div>
+          <div id='info-box-left'>
             <img src={image} alt={item.volumeInfo.title} className='image' />
           </div>
 
-          <div>
+          <div id='info-box-right'>
             <div>Author: {item.volumeInfo.authors}</div>
             <div>Publisher: {item.volumeInfo.publisher}</div>
             <div>Published Date: {item.volumeInfo.publishedDate}</div>
             <div>Page Count: {item.volumeInfo.pageCount}</div>
           </div>
         </div>
-        <div>Description</div>
-        <div>{item.volumeInfo.description}</div>
+        <div id='description'>
+          <div>Description</div>
+          <div>{item.volumeInfo.description}</div>
+        </div>
       </div>
     );
   };

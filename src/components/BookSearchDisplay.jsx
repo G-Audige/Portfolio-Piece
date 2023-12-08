@@ -10,7 +10,6 @@ function SearchDisplay(props) {
     } else {
       return (
         <div className='search-display'>
-          <div></div>
           {items.map((item) => {
             let image;
             if (typeof item.volumeInfo.imageLinks == 'undefined') {
