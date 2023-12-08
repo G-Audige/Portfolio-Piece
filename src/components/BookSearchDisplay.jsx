@@ -9,7 +9,7 @@ function SearchDisplay(props) {
       loading();
     } else {
       return (
-        <div className='catalogue'>
+        <div className='search-display'>
           {items.map((item) => {
             let image;
             if (typeof item.volumeInfo.imageLinks == 'undefined') {
@@ -38,7 +38,7 @@ function SearchDisplay(props) {
     // console.log('Loading: ', props);
     // console.log('Prop: ', props.items[0].volumeInfo.title);
     return (
-      <div className='catalogue'>
+      <div className='search-display'>
         <h1>Loading...</h1>
       </div>
     );

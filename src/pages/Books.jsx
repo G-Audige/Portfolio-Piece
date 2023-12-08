@@ -12,6 +12,7 @@ function Books() {
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
 
   const getBook = async (searchterm) => {
+    window.scrollTo(0, 0);
     try {
       const response = await fetch(
         `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&maxResults=40`
@@ -32,7 +33,7 @@ function Books() {
 
   return (
     <div id='books'>
-      Books
+      <h2>Book Search</h2>
       <Form search={getBook} />
       <SearchDisplay searchterm={book} />
     </div>

@@ -44,7 +44,10 @@ function BookInfo() {
       <div id='book-info'>
         <h2>{item.volumeInfo.title}</h2>
         <div className='info-box'>
-          <img src={image} alt={item.volumeInfo.title} className='image' />
+          <div>
+            <img src={image} alt={item.volumeInfo.title} className='image' />
+          </div>
+
           <div>
             <div>Author: {item.volumeInfo.authors}</div>
             <div>Publisher: {item.volumeInfo.publisher}</div>
@@ -53,6 +56,7 @@ function BookInfo() {
           </div>
         </div>
         <div>Description</div>
+        <div>{item.volumeInfo.description}</div>
       </div>
     );
   };
