@@ -13,7 +13,8 @@ function Books() {
   const [book, setBook] = useState('');
   const [index, setIndex] = useState(0);
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
-  const maxResults = 4;
+  const maxResults = 20;
+  let prvBtn = document.querySelector('.previous-btn');
 
   const getBook = async (searchterm) => {
     window.scrollTo(0, 0);
@@ -24,7 +25,13 @@ function Books() {
       const data = await response.json();
       setSearch(searchterm);
       setBook(data);
+      if (index > 0) {
+        prvBtn.style.visibility = 'visible';
+      } else {
+        prvBtn.style.visibility = 'hidden';
+      }
       console.log('Current batch: ', book);
+      console.log(index);
     } catch (e) {
       console.error(e);
     }
@@ -32,7 +39,6 @@ function Books() {
   useEffect(() => {
     if (book) {
       getBook(book);
-      console.log(book.totalItems);
     }
     // eslint-disable-next-line
   }, [setBook, index]);
@@ -40,14 +46,12 @@ function Books() {
     decrement: function () {
       if (index >= maxResults) {
         setIndex(index - maxResults);
+        getBook(search);
       }
-      getBook(search);
-      console.log(index);
     },
     increment: function () {
       setIndex(index + maxResults);
       getBook(search);
-      console.log('index: ', index);
     },
   };
 

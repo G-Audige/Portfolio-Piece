@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function SearchDisplay(props) {
   const loaded = () => {
     const items = props.searchterm.items;
-    console.log(items);
+    // console.log(items);
     if (typeof items == 'undefined') {
       loading();
     } else {

@@ -70,10 +70,19 @@
 /* Classes */
 .book {
   border: 1px solid gray;
+  display: block;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 5px 5px 5px 5px;
+  white-space: initial;
   width: 200px;
+  height: 250px;
 }
+.book a {
+  text-decoration: none;
+}
+
 .dropdown-container {
   margin-right: 20px;
 }
@@ -94,6 +103,9 @@
 .page {
   margin: auto;
   text-align: center;
+}
+.previous-btn {
+  visibility: hidden;
 }
 .searchbar {
   border: transparent;
