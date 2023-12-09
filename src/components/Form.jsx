@@ -13,6 +13,8 @@ function Form(props) {
     e.preventDefault();
     if (formData.searchterm) {
       props.search(formData.searchterm);
+    } else {
+      window.location.reload();
     }
   };
 

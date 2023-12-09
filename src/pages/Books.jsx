@@ -16,6 +16,7 @@ function Books() {
   const maxResults = 20;
   const pages = 10;
   const displayedBooks = [];
+  const prvBtn = document.querySelectorAll('.previous-btn');
 
   // Get results from api
   const getBook = async (searchterm) => {
@@ -42,7 +43,7 @@ function Books() {
     }
 
     // eslint-disable-next-line
-  }, [setBook, index]);
+  }, [index]);
 
   const buttonActions = {
     decrement: function () {
