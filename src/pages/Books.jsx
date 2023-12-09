@@ -44,7 +44,11 @@ function Books() {
 
     // eslint-disable-next-line
   }, [index]);
-
+  const resetIndex = () => {
+    if (index > 0) {
+      setIndex(0);
+    }
+  };
   const buttonActions = {
     decrement: function () {
       if (index >= maxResults) {
@@ -63,7 +67,7 @@ function Books() {
   return (
     <div id='books' className='page'>
       <h2>Book Search</h2>
-      <Form search={getBook} />
+      <Form search={getBook} setIndex={setIndex} index={index} />
       Page {(index + maxResults) / maxResults} of {pages}
       <div id='buttons'>
         <button onClick={buttonActions.decrement} className='previous-btn'>

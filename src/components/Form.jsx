@@ -16,6 +16,9 @@ function Form(props) {
     } else {
       window.location.reload();
     }
+    if (props.index > 0) {
+      props.setIndex(0);
+    }
   };
 
   return (
