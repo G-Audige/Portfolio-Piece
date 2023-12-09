@@ -8,18 +8,12 @@ function Form(props) {
   });
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    console.log(formData);
-    // handleSubmit(e);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.searchterm) {
       props.search(formData.searchterm);
     }
-    // else {
-    //   props.search(e);
-    // }
   };
 
   return (

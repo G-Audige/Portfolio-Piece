@@ -16,7 +16,6 @@ function Books() {
   const maxResults = 20;
   const pages = 10;
   const displayedBooks = [];
-  let prvBtn = document.querySelector('.previous-btn');
 
   // Get results from api
   const getBook = async (searchterm) => {
@@ -30,53 +29,58 @@ function Books() {
         setSearch(searchterm);
         setBook(data);
         displayedBooks.push(data);
-        // console.log('Current batch: ', book);
       } catch (e) {
         console.error(e);
       }
     }
+
     console.log(displayedBooks);
   };
   useEffect(() => {
     if (search) {
       getBook(search);
     }
+
     // eslint-disable-next-line
   }, [setBook, index]);
 
   const buttonActions = {
     decrement: function () {
       if (index >= maxResults) {
-        setIndex((index) => index - maxResults);
+        setIndex(index - maxResults);
         console.log('Decrement to', index);
       }
-      // if (index == 0) {
-      //   prvBtn.style.visibility = 'hidden';
-      // } else {
-      //   prvBtn.style.visibility = 'visible';
-      // }
     },
     increment: function () {
-      if (search) {
-        setIndex((index) => index + maxResults);
+      if (search && (index + maxResults) / maxResults < pages) {
+        setIndex(index + maxResults);
         console.log('Increment to', index);
       }
     },
   };
-  if (index == 0) {
-    prvBtn.style.visibility = 'hidden';
-  } else {
-    prvBtn.style.visibility = 'visible';
-  }
 
   return (
     <div id='books' className='page'>
       <h2>Book Search</h2>
       <Form search={getBook} />
       Page {(index + maxResults) / maxResults} of {pages}
-      <Buttons action={buttonActions} />
+      <div id='buttons'>
+        <button onClick={buttonActions.decrement} className='previous-btn'>
+          Previous
+        </button>
+        <button onClick={buttonActions.increment} className='next-btn'>
+          Next
+        </button>
+      </div>
       <SearchDisplay searchterm={book} />
-      <Buttons action={buttonActions} />
+      <div id='buttons'>
+        <button onClick={buttonActions.decrement} className='previous-btn'>
+          Previous
+        </button>
+        <button onClick={buttonActions.increment} className='next-btn'>
+          Next
+        </button>
+      </div>
       Page {(index + maxResults) / maxResults} of {pages}
     </div>
   );

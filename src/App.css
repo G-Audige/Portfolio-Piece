@@ -5,9 +5,15 @@
 #books {
   width: 95%;
 }
-#book-info {
-  width: 95%;
+#book-container {
+  background-color: #64e9ee;
+  margin: auto;
+  padding-top: 30px;
+  width: 90%;
 }
+/* #book-info {
+  width: 100%;
+} */
 #buttons {
   display: flex;
   justify-content: space-between;
@@ -59,6 +65,7 @@
 #info-box-left {
   background-color: white;
   height: 100%;
+  padding: 10px 0px 10px 0px;
   text-align: center;
   width: 50%;
 }
@@ -103,13 +110,15 @@
   text-align: left;
   width: 80%;
 }
-
+.next-btn {
+  visibility: visible;
+}
 .page {
   margin: auto;
   text-align: center;
 }
 .previous-btn {
-  visibility: hidden;
+  visibility: visible;
 }
 .searchbar {
   border: transparent;

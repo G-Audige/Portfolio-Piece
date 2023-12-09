@@ -6,7 +6,9 @@ function Buttons(props) {
       <button onClick={props.action.decrement} className='previous-btn'>
         Previous
       </button>
-      <button onClick={props.action.increment}>Next</button>
+      <button onClick={props.action.increment} className='next-btn'>
+        Next
+      </button>
     </div>
   );
 }
