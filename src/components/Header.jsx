@@ -15,10 +15,6 @@ function Header() {
         <h2 className='small'>Small</h2>
       </div>
       <div className='dropdown-container'>
-        Explore
-        <Link to='/projects'>
-          <p>Projects</p>
-        </Link>
         <Link to='/books'>
           <p>Book Search</p>
         </Link>

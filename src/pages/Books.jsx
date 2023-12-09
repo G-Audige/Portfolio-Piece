@@ -31,7 +31,7 @@ function Books() {
         setSearch(searchterm);
         setBook(data);
         displayedBooks.push(data);
-        console.log('Searchterm', searchterm);
+        console.log('Searchterm', book);
         // console.log('Current batch: ', book);
       } catch (e) {
         console.error(e);
@@ -40,8 +40,9 @@ function Books() {
     console.log(displayedBooks);
   };
   useEffect(() => {
-    if (book) {
-      getBook(book);
+    if (search) {
+      getBook(search);
+      console.log('useEffect', search);
     }
     // eslint-disable-next-line
   }, [setBook, index]);
