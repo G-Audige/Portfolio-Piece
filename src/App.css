@@ -8,6 +8,10 @@
 #book-info {
   width: 95%;
 }
+#buttons {
+  display: flex;
+  justify-content: space-between;
+}
 #content {
   background-color: #3aafb9;
   padding-top: 150px;

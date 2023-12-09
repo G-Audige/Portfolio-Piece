@@ -7,17 +7,23 @@ function Form(props) {
     searchterm: '',
   });
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (e.target.value == undefined) {
+      setFormData(null);
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
+
+    console.log(formData);
     // handleSubmit(e);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.searchterm) {
       props.search(formData.searchterm);
-    } else {
-      props.search(e);
     }
-    console.log(formData);
+    // else {
+    //   props.search(e);
+    // }
   };
 
   return (

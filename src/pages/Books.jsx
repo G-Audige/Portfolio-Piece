@@ -17,23 +17,21 @@ function Books() {
   let prvBtn = document.querySelector('.previous-btn');
 
   const getBook = async (searchterm) => {
-    window.scrollTo(0, 0);
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&startIndex=${index}&maxResults=${maxResults}`
-      );
-      const data = await response.json();
-      setSearch(searchterm);
-      setBook(data);
-      if (index > 0) {
-        prvBtn.style.visibility = 'visible';
-      } else {
-        prvBtn.style.visibility = 'hidden';
+    console.log(searchterm);
+    if (searchterm) {
+      window.scrollTo(0, 0);
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&startIndex=${index}&maxResults=${maxResults}`
+        );
+        const data = await response.json();
+        setSearch(searchterm);
+        setBook(data);
+
+        console.log('Current batch: ', book);
+      } catch (e) {
+        console.error(e);
       }
-      console.log('Current batch: ', book);
-      console.log(index);
-    } catch (e) {
-      console.error(e);
     }
   };
   useEffect(() => {
@@ -47,11 +45,23 @@ function Books() {
       if (index >= maxResults) {
         setIndex(index - maxResults);
         getBook(search);
+        console.log(index);
+      }
+      if (index >= 0) {
+        prvBtn.style.visibility = 'visible';
+      } else {
+        prvBtn.style.visibility = 'hidden';
       }
     },
     increment: function () {
       setIndex(index + maxResults);
       getBook(search);
+      console.log(index);
+      if (index >= 0) {
+        prvBtn.style.visibility = 'visible';
+      } else {
+        prvBtn.style.visibility = 'hidden';
+      }
     },
   };
 
@@ -59,8 +69,11 @@ function Books() {
     <div id='books' className='page'>
       <h2>Book Search</h2>
       <Form search={getBook} />
+      Page {(index + maxResults) / maxResults}
+      <Buttons action={buttonActions} />
       <SearchDisplay searchterm={book} />
       <Buttons action={buttonActions} />
+      Page {(index + maxResults) / maxResults}
     </div>
   );
 }
