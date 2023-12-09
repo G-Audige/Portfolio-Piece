@@ -20,7 +20,6 @@ function Books() {
 
   // Get results from api
   const getBook = async (searchterm) => {
-    console.log(searchterm);
     if (searchterm) {
       window.scrollTo(0, 0);
       try {
@@ -31,7 +30,6 @@ function Books() {
         setSearch(searchterm);
         setBook(data);
         displayedBooks.push(data);
-        console.log('Searchterm', book);
         // console.log('Current batch: ', book);
       } catch (e) {
         console.error(e);
@@ -42,7 +40,6 @@ function Books() {
   useEffect(() => {
     if (search) {
       getBook(search);
-      console.log('useEffect', search);
     }
     // eslint-disable-next-line
   }, [setBook, index]);
@@ -50,29 +47,27 @@ function Books() {
   const buttonActions = {
     decrement: function () {
       if (index >= maxResults) {
-        setIndex(index - maxResults);
-        getBook(search);
-        console.log(index);
+        setIndex((index) => index - maxResults);
+        console.log('Decrement to', index);
       }
-      if (index > 0) {
-        prvBtn.style.visibility = 'visible';
-      } else {
-        prvBtn.style.visibility = 'hidden';
-      }
+      // if (index == 0) {
+      //   prvBtn.style.visibility = 'hidden';
+      // } else {
+      //   prvBtn.style.visibility = 'visible';
+      // }
     },
     increment: function () {
       if (search) {
-        setIndex(index + maxResults);
-        getBook(search);
-        console.log(index);
-        if (index > 0) {
-          prvBtn.style.visibility = 'visible';
-        } else {
-          prvBtn.style.visibility = 'hidden';
-        }
+        setIndex((index) => index + maxResults);
+        console.log('Increment to', index);
       }
     },
   };
+  if (index == 0) {
+    prvBtn.style.visibility = 'hidden';
+  } else {
+    prvBtn.style.visibility = 'visible';
+  }
 
   return (
     <div id='books' className='page'>

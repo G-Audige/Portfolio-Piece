@@ -7,7 +7,6 @@ function BookInfo() {
   console.log('Book info page.');
   const params = useParams();
   const id = params.id;
-  console.log(id);
 
   const [book, setBook] = useState('');
   const options = {
@@ -21,7 +20,6 @@ function BookInfo() {
       );
       const data = await response.json();
       setBook(data);
-      // console.log('Current batch: ', book);
     } catch (e) {
       console.error(e);
     }
@@ -31,7 +29,6 @@ function BookInfo() {
     // eslint-disable-next-line
   }, []);
   const loaded = () => {
-    // console.log('Show book: ', book);
     const item = book;
     let image;
     console.log(item.volumeInfo.imageLinks);
