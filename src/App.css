@@ -11,6 +11,9 @@
   padding-top: 30px;
   width: 90%;
 }
+#book-info {
+  padding-bottom: 50px;
+}
 #content {
   background-color: #3aafb9;
   padding-top: 170px;
@@ -26,16 +29,17 @@
 #footer {
   background-color: #001011;
   color: white;
-  height: 10vh;
+  min-height: 10vh;
   text-align: center;
 }
 #form {
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
+  /* justify-content: space-between; */
   margin: auto;
   margin-bottom: 10px;
-  padding: 5px;
+  /* padding: 5px; */
 }
 #header {
   background-color: #001011;
@@ -56,7 +60,7 @@
   color: #97c8eb;
 }
 #info-box-left {
-  background-color: white;
+  background-color: lightgrey;
   height: 100%;
   padding: 10px 0px 10px 0px;
   text-align: center;
@@ -74,6 +78,7 @@
   background-color: #97c8eb;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
 }
 #top-previous-btn {
   background-color: transparent;
@@ -101,6 +106,7 @@
   background-color: #97c8eb;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  margin-top: 10px;
 }
 #bottom-previous-btn {
   background-color: transparent;
@@ -172,20 +178,18 @@
 }
 .searchbar {
   border: transparent;
-  outline: none;
-  width: 89%;
+  /* outline: none; */
+  width: 89.5%;
 }
 .searchButton {
   background-color: transparent;
   border: transparent;
   border-left: 1px solid gray;
-  width: 9%;
+  height: 30px;
+  width: 9.5%;
 }
 .searchButton:hover {
-  background-color: cyan;
-  border: transparent;
-  border-left: 1px solid gray;
-  width: 9%;
+  background-color: lightgray;
 }
 .search-display {
   background-color: #eef6fc;
