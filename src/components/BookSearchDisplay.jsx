@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function SearchDisplay(props) {
   const loaded = () => {
     const items = props.searchterm.items;
-    // console.log(items);
     if (typeof items == 'undefined') {
       loading();
     } else {
@@ -35,8 +34,6 @@ function SearchDisplay(props) {
     }
   };
   const loading = () => {
-    // console.log('Loading: ', props);
-    // console.log('Prop: ', props.items[0].volumeInfo.title);
     return (
       <div className='search-display'>
         <h1>Loading...</h1>

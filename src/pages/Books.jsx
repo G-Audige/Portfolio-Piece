@@ -15,29 +15,27 @@ function Books() {
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
   const maxResults = 20;
   const pages = 10;
+  const displayedBooks = [];
   let prvBtn = document.querySelector('.previous-btn');
 
+  // Get results from api
   const getBook = async (searchterm) => {
     console.log(searchterm);
-    let displayedBooks = [];
-    for (let i = 0; i < pages * maxResults; i += maxResults) {
-      if (searchterm) {
-        window.scrollTo(0, 0);
-        try {
-          const response = await fetch(
-            `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&startIndex=${index}&maxResults=${maxResults}`
-          );
-          const data = await response.json();
-          setSearch(searchterm);
-          setBook(data);
-          displayedBooks.push(data);
-          console.log('Searchterm', searchterm);
-          // console.log('Current batch: ', book);
-        } catch (e) {
-          console.error(e);
-        }
+    if (searchterm) {
+      window.scrollTo(0, 0);
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&startIndex=${index}&maxResults=${maxResults}`
+        );
+        const data = await response.json();
+        setSearch(searchterm);
+        setBook(data);
+        displayedBooks.push(data);
+        console.log('Searchterm', searchterm);
+        // console.log('Current batch: ', book);
+      } catch (e) {
+        console.error(e);
       }
-      console.log(i);
     }
     console.log(displayedBooks);
   };
@@ -46,7 +44,8 @@ function Books() {
       getBook(book);
     }
     // eslint-disable-next-line
-  }, [setSearch]);
+  }, [setBook, index]);
+
   const buttonActions = {
     decrement: function () {
       if (index >= maxResults) {
