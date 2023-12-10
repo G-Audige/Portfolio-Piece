@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+// Contexts
+import { SearchContext } from '../Contexts/SearchContext';
 // Hooks
 import { useState } from 'react';
 
 function Form(props) {
+  const { index, setIndex } = useContext(SearchContext);
+  const { search, setSearch } = useContext(SearchContext);
   const [formData, setFormData] = useState({
     searchterm: '',
   });
@@ -16,8 +20,8 @@ function Form(props) {
     } else {
       window.location.reload();
     }
-    if (props.index > 0) {
-      props.setIndex(0);
+    if (index > 0) {
+      setIndex(0);
     }
   };
 

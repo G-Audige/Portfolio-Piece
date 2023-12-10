@@ -13,11 +13,12 @@ function App() {
   const [search, setSearch] = useState('');
   const [index, setIndex] = useState(0);
   const [books, setBooks] = useState('');
+  const [showBook, setShowBook] = useState(false);
   return (
     <div className='App'>
       <Header />
       <SearchContext.Provider value={{ search, setSearch, index, setIndex }}>
-        <APIContext.Provider value={{ books, setBooks }}>
+        <APIContext.Provider value={{ books, setBooks, showBook, setShowBook }}>
           <Content />
         </APIContext.Provider>
       </SearchContext.Provider>

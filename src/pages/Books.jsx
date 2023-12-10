@@ -44,13 +44,11 @@ function Books() {
     decrement: function () {
       if (index >= maxResults) {
         setIndex(index - maxResults);
-        // console.log('Decrement to', index);
       }
     },
     increment: function () {
       if (search && (index + maxResults) / maxResults < pages) {
         setIndex(index + maxResults);
-        // console.log('Increment to', index);
       }
     },
   };
@@ -59,7 +57,7 @@ function Books() {
     <div id='books' className='page'>
       <h2>Book Search</h2>
       <Form search={getBooks} setIndex={setIndex} index={index} />
-      {books !== '' ? (
+      {search ? (
         <div>
           Page {(index + maxResults) / maxResults} of {pages}
           <div className='buttons' id='upper-buttons'>
@@ -75,7 +73,7 @@ function Books() {
         ''
       )}
       <SearchDisplay searchterm={books} />
-      {books !== '' ? (
+      {search ? (
         <div>
           <div className='buttons' id='lower-buttons'>
             <button onClick={buttonActions.decrement} id='bottom-previous-btn'>
