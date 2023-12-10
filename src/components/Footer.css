@@ -1,6 +1,11 @@
 #footer {
   background-color: #001011;
   color: white;
-  min-height: 10vh;
+  display: flex;
+  justify-content: center;
   text-align: center;
+}
+.links img {
+  height: 30px;
+  padding: 5px;
 }
