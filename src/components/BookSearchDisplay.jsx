@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+// Contexts
+import { APIContext } from '../Contexts/APIContext';
 
 function SearchDisplay(props) {
   const loaded = () => {

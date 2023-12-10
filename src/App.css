@@ -178,10 +178,29 @@
 .previous-btn {
   visibility: visible;
 }
+.purchase-link {
+  background-color: #97c8eb;
+  border: solid #093a3e;
+  border-radius: 15px;
+  color: #093a3e;
+  font-weight: 600;
+  padding: 10px;
+  text-decoration: none;
+}
+.purchase-link:hover {
+  background-color: #093a3e;
+  border: solid #97c8eb;
+  color: #97c8eb;
+}
 .searchbar {
   border: transparent;
   outline: none;
   width: 89.5%;
+}
+.sale-info {
+  text-align: left;
+  margin: auto;
+  width: 80%;
 }
 .searchButton {
   background-color: transparent;

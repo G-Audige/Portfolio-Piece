@@ -1,7 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-//Contexts
-import { APIContext } from '../Contexts/APIContext';
 // Hooks
 import { useEffect, useState } from 'react';
 
@@ -34,7 +32,7 @@ function BookInfo() {
   const loaded = () => {
     const item = book;
     let image;
-    console.log(item.volumeInfo.imageLinks);
+    console.log(item);
     if (typeof item.volumeInfo.imageLinks == 'undefined') {
       image = 'NoImage.png';
     } else {
@@ -44,6 +42,7 @@ function BookInfo() {
       <div id='book-container'>
         <div id='book-info' className='page'>
           <h2>{item.volumeInfo.title}</h2>
+          <h3>{item.volumeInfo.subtitle}</h3>
           <div className='info-box'>
             <div id='info-box-left'>
               <img src={image} alt={item.volumeInfo.title} className='image' />
@@ -60,15 +59,37 @@ function BookInfo() {
             <div>Description</div>
             <div>{item.volumeInfo.description}</div>
           </div>
-          {item.saleInfo.buyLink ? (
-            <a href={item.saleInfo.buyLink} className='purchase-link'>
-              Buy
-            </a>
-          ) : (
-            ''
-          )}
-          <div>
-            <div></div>
+          <div className='sale-info'>
+            <h3>
+              Sale Status:{' '}
+              {item.saleInfo.saleability == 'FOR_SALE' ? (
+                <span>For sale</span>
+              ) : (
+                <span>Not for sale</span>
+              )}
+            </h3>
+            {item.saleInfo.buyLink ? (
+              <a href={item.saleInfo.buyLink} className='purchase-link'>
+                Buy
+              </a>
+            ) : (
+              ''
+            )}
+            <h3>
+              E-book Status:{' '}
+              {item.saleInfo.isEbook ? (
+                <span>Available</span>
+              ) : (
+                <span>Not Available</span>
+              )}
+            </h3>
+            {item.volumeInfo.previewLink ? (
+              <a href={item.volumeInfo.previewLink} className='purchase-link'>
+                Preview
+              </a>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>
