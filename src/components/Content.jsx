@@ -6,6 +6,7 @@ import BookInfo from '../pages/BookInfo';
 import BookSearch from '../pages/BookSearch';
 import AboutBooks from '../pages/AboutBooks';
 import Main from '../pages/Main';
+import Resume from '../pages/Resume';
 
 function Content() {
   return (
@@ -15,6 +16,7 @@ function Content() {
         <Route path='/books' element={<BookSearch />} />
         <Route path='/books/:title/:id' element={<BookInfo />} />
         <Route path='/' element={<Main />} />
+        <Route path='/resume' element={<Resume />} />
       </Routes>
     </div>
   );

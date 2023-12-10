@@ -1,3 +1,17 @@
 #main {
-  padding-top: 100px;
+  padding-top: 90px;
+}
+#intro {
+  background-color: white;
+}
+#intro-1 {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+#intro-1 img {
+  width: 50%;
+}
+#projects {
+  background-color: #97c8eb;
 }
