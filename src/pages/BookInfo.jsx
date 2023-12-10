@@ -57,6 +57,12 @@ function BookInfo() {
             <div>Description</div>
             <div>{item.volumeInfo.description}</div>
           </div>
+          <div>
+            <a href={item.saleInfo.buyLink} className='purchase-link'>
+              Buy
+            </a>
+            <div></div>
+          </div>
         </div>
       </div>
     );

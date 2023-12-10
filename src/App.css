@@ -133,7 +133,9 @@
 
 /* Classes */
 .book {
+  background-color: white;
   border: 1px solid gray;
+  border-radius: 5px;
   display: block;
   text-align: center;
   overflow: hidden;
@@ -178,7 +180,7 @@
 }
 .searchbar {
   border: transparent;
-  /* outline: none; */
+  outline: none;
   width: 89.5%;
 }
 .searchButton {

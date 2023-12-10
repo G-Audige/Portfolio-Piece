@@ -27,7 +27,7 @@ function Books() {
         const data = await response.json();
         setSearch(searchterm);
         setBook(data);
-        console.log(book);
+        console.log(index);
       } catch (e) {
         console.error(e);
       }
@@ -59,25 +59,38 @@ function Books() {
     <div id='books' className='page'>
       <h2>Book Search</h2>
       <Form search={getBook} setIndex={setIndex} index={index} />
-      Page {(index + maxResults) / maxResults} of {pages}
-      <div className='buttons' id='upper-buttons'>
-        <button onClick={buttonActions.decrement} id='top-previous-btn'>
-          Previous
-        </button>
-        <button onClick={buttonActions.increment} id='top-next-btn'>
-          Next
-        </button>
-      </div>
+      {book != '' ? (
+        <div>
+          Page {(index + maxResults) / maxResults} of {pages}
+          <div className='buttons' id='upper-buttons'>
+            <button onClick={buttonActions.decrement} id='top-previous-btn'>
+              Previous
+            </button>
+            <button onClick={buttonActions.increment} id='top-next-btn'>
+              Next
+            </button>
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
       <SearchDisplay searchterm={book} />
-      <div className='buttons' id='lower-buttons'>
-        <button onClick={buttonActions.decrement} id='bottom-previous-btn'>
-          Previous
-        </button>
-        <button onClick={buttonActions.increment} id='bottom-next-btn'>
-          Next
-        </button>
-      </div>
-      Page {(index + maxResults) / maxResults} of {pages}
+      {book != '' ? (
+        <div>
+          <div className='buttons' id='lower-buttons'>
+            <button onClick={buttonActions.decrement} id='bottom-previous-btn'>
+              Previous
+            </button>
+
+            <button onClick={buttonActions.increment} id='bottom-next-btn'>
+              Next
+            </button>
+          </div>
+          Page {(index + maxResults) / maxResults} of {pages}
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 }
