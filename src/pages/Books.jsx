@@ -1,22 +1,23 @@
 import React from 'react';
+// Contexts
+import { APIContext } from '../Contexts/APIContext';
+import { SearchContext } from '../Contexts/SearchContext';
 // Components
 import Form from '../components/Form';
 import SearchDisplay from '../components/BookSearchDisplay';
-
 //Hooks
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 
 function Books() {
   window.scrollTo(0, 0);
-  const [search, setSearch] = useState('');
-  const [book, setBook] = useState('');
-  const [index, setIndex] = useState(0);
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
   const maxResults = 4;
   const pages = 10;
+  const { books, setBooks } = useContext(APIContext);
+  const { search, setSearch, index, setIndex } = useContext(SearchContext);
 
   // Get results from api
-  const getBook = async (searchterm) => {
+  const getBooks = async (searchterm) => {
     if (searchterm) {
       window.scrollTo(0, 0);
       try {
@@ -24,9 +25,9 @@ function Books() {
           `https://www.googleapis.com/books/v1/volumes?q=${searchterm}&key=${apiKey}&startIndex=${index}&maxResults=${maxResults}`
         );
         const data = await response.json();
+        setBooks(data);
         setSearch(searchterm);
-        setBook(data);
-        console.log(index);
+        console.log('Searchterm: ', search, 'Index:', index);
       } catch (e) {
         console.error(e);
       }
@@ -34,7 +35,7 @@ function Books() {
   };
   useEffect(() => {
     if (search) {
-      getBook(search);
+      getBooks(search);
     }
     // eslint-disable-next-line
   }, [index]);
@@ -57,8 +58,8 @@ function Books() {
   return (
     <div id='books' className='page'>
       <h2>Book Search</h2>
-      <Form search={getBook} setIndex={setIndex} index={index} />
-      {book != '' ? (
+      <Form search={getBooks} setIndex={setIndex} index={index} />
+      {books !== '' ? (
         <div>
           Page {(index + maxResults) / maxResults} of {pages}
           <div className='buttons' id='upper-buttons'>
@@ -73,8 +74,8 @@ function Books() {
       ) : (
         ''
       )}
-      <SearchDisplay searchterm={book} />
-      {book != '' ? (
+      <SearchDisplay searchterm={books} />
+      {books !== '' ? (
         <div>
           <div className='buttons' id='lower-buttons'>
             <button onClick={buttonActions.decrement} id='bottom-previous-btn'>

@@ -10,20 +10,17 @@ import { APIContext } from './Contexts/APIContext';
 import { SearchContext } from './Contexts/SearchContext';
 
 function App() {
-  const [search, setSearch] = useState({
-    searchterm: '',
-    index: 0,
-  });
-  const [book, setBook] = useState('');
+  const [search, setSearch] = useState('');
+  const [index, setIndex] = useState(0);
+  const [books, setBooks] = useState('');
   return (
     <div className='App'>
       <Header />
-      <SearchContext.Provider value={{ search, setSearch }}>
-        <APIContext.Provider value={{ book, setBook }}>
+      <SearchContext.Provider value={{ search, setSearch, index, setIndex }}>
+        <APIContext.Provider value={{ books, setBooks }}>
           <Content />
         </APIContext.Provider>
       </SearchContext.Provider>
-
       <Footer />
     </div>
   );

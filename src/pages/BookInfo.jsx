@@ -1,5 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+//Contexts
+import { APIContext } from '../Contexts/APIContext';
+// Hooks
 import { useEffect, useState } from 'react';
 
 function BookInfo() {
