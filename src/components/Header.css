@@ -1,0 +1,18 @@
+#header {
+  background-color: #001011;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+  width: 100vw;
+}
+#header p {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+#header p:hover {
+  color: #97c8eb;
+}

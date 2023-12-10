@@ -1,3 +1,4 @@
+import './Books.css';
 import React from 'react';
 // Contexts
 import { APIContext } from '../Contexts/APIContext';

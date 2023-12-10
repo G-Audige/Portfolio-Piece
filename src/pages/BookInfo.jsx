@@ -1,3 +1,4 @@
+import './BookInfo.css';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 // Hooks
@@ -25,6 +26,7 @@ function BookInfo() {
       console.error(e);
     }
   };
+
   useEffect(() => {
     getBook(book);
     // eslint-disable-next-line
@@ -38,11 +40,14 @@ function BookInfo() {
     } else {
       image = item.volumeInfo.imageLinks.thumbnail;
     }
+    const tagRegExp = new RegExp('<s*[^>]*>', 'g');
+    let desc = item.volumeInfo.description;
+    desc = desc.replace(tagRegExp, '');
     return (
       <div id='book-container'>
         <div id='book-info' className='page'>
           <h2>{item.volumeInfo.title}</h2>
-          <h3>{item.volumeInfo.subtitle}</h3>
+          {item.volumeInfo.subtitle ? <h3>{item.volumeInfo.subtitle}</h3> : ''}
           <div className='info-box'>
             <div id='info-box-left'>
               <img src={image} alt={item.volumeInfo.title} className='image' />
@@ -57,7 +62,11 @@ function BookInfo() {
           </div>
           <div id='description'>
             <div>Description</div>
-            <div>{item.volumeInfo.description}</div>
+            {item.volumeInfo.description ? (
+              <div>{desc}</div>
+            ) : (
+              <p>No description available.</p>
+            )}
           </div>
           <div className='sale-info'>
             <h3>

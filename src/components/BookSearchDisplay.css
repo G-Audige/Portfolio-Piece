@@ -1,0 +1,25 @@
+.book {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 5px 5px 5px;
+  white-space: initial;
+  width: 190px;
+  height: 250px;
+}
+.book a {
+  text-decoration: none;
+}
+.search-display {
+  background-color: #eef6fc;
+  border: 1px solid #97c8eb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  padding: 5px 10px 5px 10px;
+}

@@ -1,3 +1,4 @@
+import './Form.css';
 import React, { useContext } from 'react';
 // Contexts
 import { SearchContext } from '../Contexts/SearchContext';
