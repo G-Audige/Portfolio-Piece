@@ -26,7 +26,6 @@ function BookInfo() {
       console.error(e);
     }
   };
-
   useEffect(() => {
     getBook(book);
     // eslint-disable-next-line
@@ -35,24 +34,26 @@ function BookInfo() {
     const item = book;
     let image;
     console.log(item);
-    if (typeof item.volumeInfo.imageLinks == 'undefined') {
+    if (typeof item.volumeInfo.imageLinks === 'undefined') {
       image = 'NoImage.png';
     } else {
       image = item.volumeInfo.imageLinks.thumbnail;
     }
     const tagRegExp = new RegExp('<s*[^>]*>', 'g');
-    let desc = item.volumeInfo.description;
-    desc = desc.replace(tagRegExp, '');
+    let desc;
+    if (item.volumeInfo.description) {
+      desc = item.volumeInfo.description;
+      desc = desc.replace(tagRegExp, '');
+    }
     return (
       <div id='book-container'>
         <div id='book-info' className='page'>
           <h2>{item.volumeInfo.title}</h2>
           {item.volumeInfo.subtitle ? <h3>{item.volumeInfo.subtitle}</h3> : ''}
-          <div className='info-box'>
+          <div id='info-box'>
             <div id='info-box-left'>
               <img src={image} alt={item.volumeInfo.title} className='image' />
             </div>
-
             <div id='info-box-right'>
               <div>Author: {item.volumeInfo.authors}</div>
               <div>Publisher: {item.volumeInfo.publisher}</div>
@@ -68,10 +69,10 @@ function BookInfo() {
               <p>No description available.</p>
             )}
           </div>
-          <div className='sale-info'>
+          <div id='sale-info'>
             <h3>
               Sale Status:{' '}
-              {item.saleInfo.saleability == 'FOR_SALE' ? (
+              {item.saleInfo.saleability === 'FOR_SALE' ? (
                 <span>For sale</span>
               ) : (
                 <span>Not for sale</span>
@@ -89,7 +90,7 @@ function BookInfo() {
               {item.saleInfo.isEbook ? (
                 <span>Available</span>
               ) : (
-                <span>Not Available</span>
+                <span>Not available</span>
               )}
             </h3>
             {item.volumeInfo.previewLink ? (

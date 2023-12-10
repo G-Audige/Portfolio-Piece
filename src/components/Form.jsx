@@ -1,5 +1,6 @@
 import './Form.css';
 import React, { useContext } from 'react';
+import { FaSearch } from 'react-icons/fa';
 // Contexts
 import { SearchContext } from '../Contexts/SearchContext';
 // Hooks
@@ -37,7 +38,9 @@ function Form(props) {
           value={formData.searchterm}
           className='searchbar'
         />
-        <input type='submit' value='Search' className='searchButton' />
+        <button type='submit' className='searchButton'>
+          <FaSearch />
+        </button>
       </form>
     </div>
   );

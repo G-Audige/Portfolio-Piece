@@ -7,12 +7,17 @@
   position: fixed;
   text-align: center;
   width: 100vw;
+  z-index: 1;
 }
 #header p {
   color: white;
+  font-size: 20px;
   font-weight: 600;
   text-decoration: none;
 }
 #header p:hover {
   color: #97c8eb;
+}
+.dropdown-container {
+  margin-right: 20px;
 }

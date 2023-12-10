@@ -1,37 +1,13 @@
 /* -----Default----- */
-#content {
-  background-color: #3aafb9;
-  padding-top: 170px;
-  padding-bottom: 20px;
-  min-height: 100vh;
-}
 
-#footer {
-  background-color: #001011;
-  color: white;
-  min-height: 10vh;
-  text-align: center;
-}
-
-/* Classes */
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
-.dropdown-container {
-  margin-right: 20px;
-}
 .image {
   height: 170px;
   max-width: 100%;
 }
-
 .page {
   margin: auto;
   text-align: center;
 }
-
 .default {
   display: block;
 }

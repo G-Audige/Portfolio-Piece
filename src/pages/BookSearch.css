@@ -1,5 +1,10 @@
 #books {
+  padding-top: 170px;
   width: 95%;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 #lower-buttons {
   background-color: #97c8eb;

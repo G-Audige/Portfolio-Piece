@@ -1,4 +1,4 @@
-import './Books.css';
+import './BookSearch.css';
 import React from 'react';
 // Contexts
 import { APIContext } from '../Contexts/APIContext';
@@ -9,7 +9,7 @@ import SearchDisplay from '../components/BookSearchDisplay';
 //Hooks
 import { useContext, useEffect } from 'react';
 
-function Books() {
+function BookSearch() {
   window.scrollTo(0, 0);
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
   const maxResults = 4;
@@ -94,4 +94,4 @@ function Books() {
   );
 }
 
-export default Books;
+export default BookSearch;

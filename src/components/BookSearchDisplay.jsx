@@ -1,8 +1,7 @@
 import './BookSearchDisplay.css';
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 // Contexts
-import { APIContext } from '../Contexts/APIContext';
 
 function SearchDisplay(props) {
   const loaded = () => {
@@ -14,7 +13,7 @@ function SearchDisplay(props) {
         <div className='search-display'>
           {items.map((item) => {
             let image;
-            if (typeof item.volumeInfo.imageLinks == 'undefined') {
+            if (typeof item.volumeInfo.imageLinks === 'undefined') {
               image = 'NoImage.png';
             } else {
               image = item.volumeInfo.imageLinks.thumbnail;
