@@ -1,6 +1,5 @@
 import React from 'react';
 // Components
-import Buttons from '../components/Buttons';
 import Form from '../components/Form';
 import SearchDisplay from '../components/BookSearchDisplay';
 
