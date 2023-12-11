@@ -55,16 +55,24 @@ function BookInfo() {
               <img src={image} alt={item.volumeInfo.title} className='image' />
             </div>
             <div id='info-box-right'>
-              <div>Author: {item.volumeInfo.authors}</div>
-              <div>Publisher: {item.volumeInfo.publisher}</div>
-              <div>Published Date: {item.volumeInfo.publishedDate}</div>
-              <div>Page Count: {item.volumeInfo.pageCount}</div>
+              <div>
+                <span>Author:</span> {item.volumeInfo.authors}
+              </div>
+              <div>
+                <span>Publisher:</span> {item.volumeInfo.publisher}
+              </div>
+              <div>
+                <span>Published Date:</span> {item.volumeInfo.publishedDate}
+              </div>
+              <div>
+                <span>Page Count:</span> {item.volumeInfo.pageCount}
+              </div>
             </div>
           </div>
           <div id='description'>
-            <div>Description</div>
+            <h4>Description</h4>
             {item.volumeInfo.description ? (
-              <div>{desc}</div>
+              <p>{desc}</p>
             ) : (
               <p>No description available.</p>
             )}
