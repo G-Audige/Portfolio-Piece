@@ -1,5 +1,6 @@
 #main {
   padding-top: 85px;
+  margin-bottom: -50px;
 }
 #experience {
   background-image: linear-gradient(white, #97c8eb);
@@ -14,7 +15,10 @@
 #experience p {
   text-align: center;
   margin: auto;
+  padding: 30px 0px 30px 0px;
   width: 70%;
+  font-size: 20px;
+  max-width: 1000px;
 }
 #intro {
   background-color: white;
@@ -29,21 +33,37 @@
 }
 #intro-1 h1 {
   width: 50%;
+  max-width: 500px;
+  padding-top: 50px;
 }
 #portfolio {
   background-color: #97c8eb;
+  padding-bottom: 50px;
 }
-#portfolio h2 {
-  margin-left: 5%;
+#portfolio-text {
+  margin: 5% 5% 5% 5%;
+  margin-top: 20px;
 }
 #portfolio p {
   text-align: center;
-  margin: 5% 5% 5% 5%;
+  margin: auto;
+  max-width: 1000px;
+  font-size: 20px;
 }
 #projects {
   display: flex;
-  flex-wrap: wrap;
-  margin: 5%;
+  justify-content: space-evenly;
+  background-color: #eef6fc;
+  border-radius: 15px;
+  border: solid black;
+  display: flex;
+  height: fit-content;
+  border: 5px solid #97c8eb;
+  margin: auto;
+  overflow: scroll;
+  padding: 5px 10px 5px 10px;
+  width: 80%;
+  max-width: 1000px;
 }
 .project {
   width: 200px;
@@ -57,6 +77,11 @@
 }
 .project p {
   line-height: 5px;
+  font-size: 20px;
+}
+.project a {
+  text-decoration: none;
+  color: #001011;
 }
 #resume a {
   color: blue;
@@ -65,4 +90,23 @@
 }
 #resume a:hover {
   color: white;
+}
+
+@media screen and (max-width: 680px) {
+  #intro-1 {
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+  }
+  #intro-1 h1 {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    margin: auto;
+  }
+  #main {
+    padding-top: 60px;
+  }
 }
