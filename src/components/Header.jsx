@@ -9,12 +9,12 @@ function Header() {
       <Link to='/'>
         <p>Main</p>
       </Link>
-      <div>
+      {/* <div>
         <h2 className='default'>Default</h2>
         <h2 className='large'>Large</h2>
         <h2 className='medium'>Medium</h2>
         <h2 className='small'>Small</h2>
-      </div>
+      </div> */}
       <div className='dropdown-container'>
         <Link to='/books'>
           <p>Book Search</p>

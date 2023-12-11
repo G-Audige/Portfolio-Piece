@@ -7,6 +7,10 @@
   margin: auto;
   padding: 10px;
   position: absolute;
-  top: 20%;
-  left: 18%;
+  height: fit-content;
+  width: fit-content;
+  top: 30%;
+  left: 30%;
+  bottom: 70%;
+  right: 30%;
 }

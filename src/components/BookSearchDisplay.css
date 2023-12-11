@@ -10,16 +10,18 @@
   white-space: initial;
   width: 190px;
   height: 250px;
+  margin: 1%;
 }
 .book a {
   text-decoration: none;
 }
+
 .search-display {
   background-color: #eef6fc;
   border: 1px solid #97c8eb;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   margin: auto;
   padding: 5px 10px 5px 10px;
 }

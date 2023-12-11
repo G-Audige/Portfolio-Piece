@@ -1,9 +1,10 @@
+import './Resume.css';
 import React from 'react';
 import PDFViewer from '../components/PDFViewer';
 
 function Resume() {
   return (
-    <div>
+    <div id='pdf'>
       <PDFViewer />
     </div>
   );
