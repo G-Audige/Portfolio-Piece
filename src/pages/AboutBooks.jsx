@@ -1,6 +1,8 @@
 import './AboutBooks.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+// Models
+import books from '../models/Books';
 
 function AboutBooks() {
   window.scrollTo(0, 0);
@@ -18,9 +20,27 @@ function AboutBooks() {
           </div>
         </div>
       </div>
-      <Link to='/books'>
-        <h2>Get Started</h2>
-      </Link>
+      <h2>
+        <Link to='/books'>Get Started</Link>
+      </h2>
+      <div id='recommendations'>
+        <h2>Where to start?</h2>
+        <p>
+          Here are some personal recommendations of books available, both of
+          books that I am reading and of books that are well regarded.
+        </p>
+        <div id='books'>
+          {books.map((book) => {
+            return (
+              <div>
+                {console.log(book)}
+                <Link to={`/books/${book.title}/${book.id}`}>{book.title}</Link>
+                ;
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

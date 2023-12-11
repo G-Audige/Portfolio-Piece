@@ -5,6 +5,8 @@
   background-image: linear-gradient(white, #97c8eb);
   margin-bottom: -20px;
   margin-top: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #experience h2 {
   text-align: center;
