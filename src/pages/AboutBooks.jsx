@@ -30,15 +30,19 @@ function AboutBooks() {
           books that I am reading and of books that are well regarded.
         </p>
         <div id='books'>
-          {books.map((book) => {
-            return (
-              <div>
-                {console.log(book)}
-                <Link to={`/books/${book.title}/${book.id}`}>{book.title}</Link>
-                ;
-              </div>
-            );
-          })}
+          <div id='container'>
+            {books.map((book) => {
+              return (
+                <div className='book'>
+                  {/* {console.log(book)} */}
+                  <img src={book.img}></img>
+                  <Link to={`/books/${book.title}/${book.id}`}>
+                    {book.title}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

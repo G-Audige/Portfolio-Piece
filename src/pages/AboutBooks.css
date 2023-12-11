@@ -19,3 +19,16 @@
   margin: auto;
   width: 90%;
 }
+#books {
+  background-color: #97c8eb;
+  border-radius: 15px;
+  display: flex;
+  height: fit-content;
+}
+#books div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.book {
+  margin: 1%;
+}
