@@ -1,4 +1,3 @@
-import './BookSearchDisplay.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 // Contexts
@@ -10,7 +9,7 @@ function SearchDisplay(props) {
       loading();
     } else {
       return (
-        <div className='search-display'>
+        <div className='books'>
           {items.map((item) => {
             let image;
             if (typeof item.volumeInfo.imageLinks === 'undefined') {
@@ -19,15 +18,17 @@ function SearchDisplay(props) {
               image = item.volumeInfo.imageLinks.thumbnail;
             }
             return (
-              <div className='book' key={item.id}>
-                <Link to={`/Books/${item.volumeInfo.title}/${item.id}`}>
-                  <img
-                    src={image}
-                    alt={item.volumeInfo.title}
-                    className='image'
-                  />
-                  <p>{item.volumeInfo.title}</p>
-                </Link>
+              <div className='book-container'>
+                <div className='book' key={item.id}>
+                  <Link to={`/Books/${item.volumeInfo.title}/${item.id}`}>
+                    <img
+                      src={image}
+                      alt={item.volumeInfo.title}
+                      className='image'
+                    />
+                    <p>{item.volumeInfo.title}</p>
+                  </Link>
+                </div>
               </div>
             );
           })}

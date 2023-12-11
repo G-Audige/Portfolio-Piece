@@ -1,4 +1,35 @@
 /* -----Default----- */
+.books {
+  background-color: #eef6fc;
+  border: 3px solid #97c8eb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+}
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 12.5%;
+}
+.book {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 5px 5px 5px;
+  white-space: initial;
+  width: 170px;
+  height: 250px;
+}
+.book a {
+  text-decoration: none;
+}
 .image {
   height: 170px;
   max-width: 100%;
@@ -19,17 +50,30 @@
 .small {
   display: none;
 }
-
 /* -----Media Queries----- */
+/*---Large-Default---*/
+@media screen and (max-width: 1480px) {
+  .book {
+    padding: 5px 5px 5px 5px;
+  }
+  .book-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+  }
+}
+
 /* ---Large--- */
 @media screen and (max-width: 1280px) {
   .book {
     padding: 5px 5px 5px 5px;
-    width: 170px;
   }
-  .image {
+  /* .book-container {
+    width: 19.25%;
+  } */
+  /* .image {
     height: 150px;
-  }
+  } */
   .default {
     display: none;
   }
@@ -44,15 +88,27 @@
   }
 }
 
+/*---Medium-Large---*/
+@media screen and (max-width: 1080px) {
+  .book {
+    padding: 5px 5px 5px 5px;
+  }
+  .book-container {
+    width: 25%;
+  }
+}
+
 /* ---Medium--- */
 @media screen and (max-width: 880px) {
   .book {
     padding: 5px 5px 5px 5px;
-    width: 170px;
   }
-  .image {
+  /* .book-container {
+    width: 32%;
+  } */
+  /* .image {
     height: 150px;
-  }
+  } */
   .default {
     display: none;
   }
@@ -64,6 +120,12 @@
   }
   .small {
     display: none;
+  }
+}
+/* ---Small-Medium---*/
+@media screen and (max-width: 680px) {
+  .book-container {
+    width: 50%;
   }
 }
 
@@ -75,9 +137,14 @@
   #info-box-right {
     width: 100%;
   }
+  .books {
+    justify-content: center;
+  }
   .book {
     padding: 5px 5px 5px 5px;
-    width: 45vw;
+  }
+  .book-container {
+    width: 100%;
   }
   .info-box {
     border: 1px solid gray;

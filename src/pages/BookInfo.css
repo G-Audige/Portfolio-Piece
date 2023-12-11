@@ -1,8 +1,10 @@
 #book-container {
-  background-color: #64e9ee;
+  background-color: #eef6fc;
+  border: 3px solid #97c8eb;
   margin: auto;
-  padding-top: 30px;
+  padding-top: 10px;
   width: 90%;
+  height: 100vh;
 }
 #book-info {
   padding-bottom: 50px;
@@ -56,4 +58,24 @@
   text-align: left;
   margin: auto;
   width: 80%;
+}
+@media screen and (max-width: 480px) {
+  #info-box-left {
+    width: 100%;
+  }
+  #info-box-right {
+    width: 100%;
+  }
+  .info-box {
+    border: 1px solid gray;
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: auto;
+    text-align: left;
+    width: 80%;
+  }
+  .image {
+    height: 43vw;
+  }
 }

@@ -29,20 +29,19 @@ function AboutBooks() {
           Here are some personal recommendations of books available, both of
           books that I am reading and of books that are well regarded.
         </p>
-        <div id='books'>
-          <div id='container'>
-            {books.map((book) => {
-              return (
+        <div className='books-scroll'>
+          {books.map((book) => {
+            return (
+              <div className='book-scroll-container'>
                 <div className='book'>
-                  {/* {console.log(book)} */}
-                  <img src={book.img}></img>
+                  <img src={book.img} className='image' />
                   <Link to={`/books/${book.title}/${book.id}`}>
-                    {book.title}
+                    <p>{book.title}</p>
                   </Link>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

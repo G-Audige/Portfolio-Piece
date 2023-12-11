@@ -35,11 +35,10 @@
 }
 #portfolio h2 {
   margin-left: 5%;
-  /* margin: auto; */
 }
 #portfolio p {
   text-align: center;
-  width: 90%;
+  margin: 5% 5% 5% 5%;
 }
 #projects {
   display: flex;

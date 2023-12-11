@@ -19,16 +19,18 @@
   margin: auto;
   width: 90%;
 }
-#books {
-  background-color: #97c8eb;
+.books-scroll {
+  background-color: #eef6fc;
   border-radius: 15px;
+  border: solid black;
   display: flex;
   height: fit-content;
-}
-#books div {
-  display: flex;
-  flex-wrap: wrap;
+  border: 5px solid #97c8eb;
+  margin: auto;
+  overflow: scroll;
+  padding: 5px 10px 5px 10px;
 }
 .book {
   margin: 1%;
+  text-align: center;
 }

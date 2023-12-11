@@ -1,10 +1,11 @@
-#books {
+#book-search {
   padding-top: 170px;
   width: 95%;
 }
 .buttons {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 #lower-buttons {
   background-color: #97c8eb;

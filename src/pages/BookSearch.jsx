@@ -12,7 +12,7 @@ import { useContext, useEffect } from 'react';
 function BookSearch() {
   window.scrollTo(0, 0);
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
-  const maxResults = 4;
+  const maxResults = 40;
   const pages = 10;
   const { books, setBooks } = useContext(APIContext);
   const { search, setSearch, index, setIndex } = useContext(SearchContext);
@@ -55,7 +55,7 @@ function BookSearch() {
   };
 
   return (
-    <div id='books' className='page'>
+    <div id='book-search' className='page'>
       <h2>Book Search</h2>
       <Form search={getBooks} setIndex={setIndex} index={index} />
       {search ? (
