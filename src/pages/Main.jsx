@@ -50,8 +50,10 @@ function Main() {
           <div className='project'>
             <Link to='/aboutBooks'>
               <img src='Search.png' />
-              <p>Google Book Search</p>
             </Link>
+            <a href='https://github.com/G-Audige/Project-2'>
+              <p>Google Book Search</p>
+            </a>
           </div>
         </div>
       </div>

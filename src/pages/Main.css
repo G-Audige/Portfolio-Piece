@@ -2,6 +2,9 @@
   padding-top: 85px;
   margin-bottom: -50px;
 }
+h1 {
+  color: #7ea7c4;
+}
 #experience {
   background-image: linear-gradient(white, #97c8eb);
   margin-bottom: -20px;
@@ -41,13 +44,15 @@
   padding-bottom: 50px;
 }
 #portfolio-text {
-  margin: 5% 5% 5% 5%;
+  /* margin: 5% 5% 5% 5%; */
   margin-top: 20px;
+  width: 80%;
+  max-width: 1100px;
+  margin: auto;
 }
 #portfolio p {
   text-align: center;
   margin: auto;
-  max-width: 1000px;
   font-size: 20px;
 }
 #projects {
@@ -56,7 +61,7 @@
   background-color: #eef6fc;
   border-radius: 15px;
   border: solid black;
-  display: flex;
+  flex-wrap: nowrap;
   height: fit-content;
   border: 5px solid #97c8eb;
   margin: auto;
@@ -67,6 +72,7 @@
 }
 .project {
   width: 200px;
+  min-width: 200px;
   text-align: center;
   margin: 5px;
 }
@@ -76,7 +82,6 @@
   border-radius: 10px;
 }
 .project p {
-  line-height: 5px;
   font-size: 20px;
 }
 .project a {
