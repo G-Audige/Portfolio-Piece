@@ -15,6 +15,9 @@
   font-weight: 600;
   text-decoration: none;
 }
+#header a {
+  text-decoration: none;
+}
 #header p:hover {
   color: #97c8eb;
 }
