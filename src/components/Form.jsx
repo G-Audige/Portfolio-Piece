@@ -33,7 +33,7 @@ function Form(props) {
           autoComplete='on'
           name='searchterm'
           onChange={handleChange}
-          placeholder='Search...'
+          placeholder='Search by title or author...'
           type='text'
           value={formData.searchterm}
           className='searchbar'

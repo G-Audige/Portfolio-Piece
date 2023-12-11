@@ -25,10 +25,13 @@
   padding: 5px 5px 5px 5px;
   white-space: initial;
   width: 170px;
-  height: 250px;
+  height: 270px;
 }
 .book a {
   text-decoration: none;
+}
+.book p {
+  line-height: 17px;
 }
 .image {
   height: 170px;

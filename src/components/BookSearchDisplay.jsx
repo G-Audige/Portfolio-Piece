@@ -28,6 +28,7 @@ function SearchDisplay(props) {
                     />
                     <p>{item.volumeInfo.title}</p>
                   </Link>
+                  <p>{item.volumeInfo.authors}</p>
                 </div>
               </div>
             );

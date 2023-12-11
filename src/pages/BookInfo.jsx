@@ -95,7 +95,7 @@ function BookInfo() {
             )}
             <h3>
               E-book Status:{' '}
-              {item.saleInfo.isEbook ? (
+              {item.saleInfo.isEbook === true ? (
                 <span>Available</span>
               ) : (
                 <span>Not available</span>
