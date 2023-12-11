@@ -27,18 +27,18 @@ function Form(props) {
   };
 
   return (
-    <div id='form'>
+    <div id="form">
       <form onSubmit={handleSubmit}>
         <input
-          autoComplete='on'
-          name='searchterm'
+          autoComplete="on"
+          name="searchterm"
           onChange={handleChange}
-          placeholder='Search by title or author...'
-          type='text'
+          placeholder="Search by title or author..."
+          type="text"
           value={formData.searchterm}
-          className='searchbar'
+          className="searchbar"
         />
-        <button type='submit' className='searchButton'>
+        <button type="submit" className="searchButton">
           <FaSearch />
         </button>
       </form>
