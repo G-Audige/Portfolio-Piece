@@ -16,7 +16,7 @@ function BookSearch() {
   const pages = 10;
   const { books, setBooks } = useContext(APIContext);
   const { search, setSearch, index, setIndex } = useContext(SearchContext);
-
+ 
   // Get results from api
   const getBooks = async (searchterm) => {
     if (searchterm) {
@@ -27,7 +27,7 @@ function BookSearch() {
         );
         const data = await response.json();
         setBooks(data);
-        setSearch(searchterm);
+        // setSearch(searchterm);
         console.log('Searchterm: ', search, 'Index:', index);
       } catch (e) {
         console.error(e);
@@ -36,10 +36,12 @@ function BookSearch() {
   };
   useEffect(() => {
     if (search) {
+      console.log('Search on useEffect:', search)
       getBooks(search);
     }
     // eslint-disable-next-line
   }, [index]);
+
 
   const buttonActions = {
     decrement: function () {

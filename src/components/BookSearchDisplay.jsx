@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // Contexts
 
+
 function SearchDisplay(props) {
   const loaded = () => {
     const items = props.searchterm.items;
