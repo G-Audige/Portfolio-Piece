@@ -1,18 +1,14 @@
-#book-search {
-  padding-top: 100px;
-  max-width: 1600px;
-  width: 95%;
-}
 .buttons {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-#lower-buttons {
+
+#upper-buttons {
   background-color: #97c8eb;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-bottom: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
 }
 #top-previous-btn {
   background-color: transparent;
@@ -36,11 +32,12 @@
 #top-next-btn:hover {
   background-color: #eef6fc;
 }
-#upper-buttons {
+
+#lower-buttons {
   background-color: #97c8eb;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-top: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10px;
 }
 #bottom-previous-btn {
   background-color: transparent;

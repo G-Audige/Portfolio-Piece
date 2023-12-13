@@ -4,6 +4,7 @@ import React from 'react';
 import { APIContext } from '../Contexts/APIContext';
 import { SearchContext } from '../Contexts/SearchContext';
 // Components
+import Buttons from '../components/Buttons';
 import Form from '../components/Form';
 import SearchDisplay from '../components/BookSearchDisplay';
 //Hooks
@@ -12,11 +13,11 @@ import { useContext, useEffect } from 'react';
 function BookSearch() {
   window.scrollTo(0, 0);
   const apiKey = 'AIzaSyDuLCXY1RHG1ude7aVtiK1acROKuNeUlfs';
-  const maxResults = 40;
+  const maxResults = 4;
   const pages = 10;
   const { books, setBooks } = useContext(APIContext);
   const { search, index, setIndex } = useContext(SearchContext);
- 
+
   // Get results from api
   const getBooks = async (searchterm) => {
     if (searchterm) {
@@ -35,12 +36,11 @@ function BookSearch() {
   };
   useEffect(() => {
     if (search) {
-      console.log('Search on useEffect:', search)
+      console.log('Search on useEffect:', search);
       getBooks(search);
     }
     // eslint-disable-next-line
   }, [index]);
-
 
   const buttonActions = {
     decrement: function () {
@@ -55,21 +55,19 @@ function BookSearch() {
     },
   };
 
+  const position = {
+    top: 0,
+    bottom: 1,
+  };
+
   return (
-    <div id='book-search' className='page'>
+    <div id="book-search" className="page">
       <h2>Book Search</h2>
       <Form search={getBooks} setIndex={setIndex} index={index} />
       {search ? (
         <div>
           Page {(index + maxResults) / maxResults} of {pages}
-          <div className='buttons' id='upper-buttons'>
-            <button onClick={buttonActions.decrement} id='top-previous-btn'>
-              Previous
-            </button>
-            <button onClick={buttonActions.increment} id='top-next-btn'>
-              Next
-            </button>
-          </div>
+          <Buttons action={buttonActions} position={position.top} />
         </div>
       ) : (
         ''
@@ -77,15 +75,7 @@ function BookSearch() {
       <SearchDisplay searchterm={books} />
       {search ? (
         <div>
-          <div className='buttons' id='lower-buttons'>
-            <button onClick={buttonActions.decrement} id='bottom-previous-btn'>
-              Previous
-            </button>
-
-            <button onClick={buttonActions.increment} id='bottom-next-btn'>
-              Next
-            </button>
-          </div>
+          <Buttons action={buttonActions} position={position.bottom} />
           Page {(index + maxResults) / maxResults} of {pages}
         </div>
       ) : (

@@ -6,7 +6,7 @@ import { SearchContext } from '../Contexts/SearchContext';
 // Hooks
 import { useContext } from 'react';
 
-function SearchDisplay(props) {
+function SearchDisplay() {
   const { books } = useContext(APIContext);
   const {search, index} = useContext(SearchContext)
   const loaded = () => {
