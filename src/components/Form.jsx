@@ -7,8 +7,7 @@ import { SearchContext } from '../Contexts/SearchContext';
 import { useEffect, useState } from 'react';
 
 function Form(props) {
-  const { index, setIndex } = useContext(SearchContext);
-  const { search, setSearch } = useContext(SearchContext);
+  const { index, setIndex, setSearch } = useContext(SearchContext);
   const [formData, setFormData] = useState({
     searchterm: '',
   });
@@ -17,14 +16,11 @@ function Form(props) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (index > 0 || index < 0) {
-      setSearch(formData.searchterm);
-      setIndex(0);
-    }
     if (formData.searchterm) {
       setSearch(formData.searchterm);
-      console.log('Form data search:', search);
-      // props.search(formData.searchterm);
+      if (index > 0) {
+        setIndex(0);
+      }
     } else {
       window.location.reload();
     }

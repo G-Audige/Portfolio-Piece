@@ -15,7 +15,7 @@ function BookSearch() {
   const maxResults = 40;
   const pages = 10;
   const { books, setBooks } = useContext(APIContext);
-  const { search, setSearch, index, setIndex } = useContext(SearchContext);
+  const { search, index, setIndex } = useContext(SearchContext);
  
   // Get results from api
   const getBooks = async (searchterm) => {
@@ -27,7 +27,6 @@ function BookSearch() {
         );
         const data = await response.json();
         setBooks(data);
-        // setSearch(searchterm);
         console.log('Searchterm: ', search, 'Index:', index);
       } catch (e) {
         console.error(e);

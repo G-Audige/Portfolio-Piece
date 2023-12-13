@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // Contexts
-
+import { APIContext } from '../Contexts/APIContext';
+import { SearchContext } from '../Contexts/SearchContext';
+// Hooks
+import { useContext } from 'react';
 
 function SearchDisplay(props) {
+  const { books } = useContext(APIContext);
+  const {search, index} = useContext(SearchContext)
   const loaded = () => {
-    const items = props.searchterm.items;
+    console.log (books.items)
+    const items = books.items;
     if (typeof items == 'undefined') {
       loading();
     } else {
@@ -41,11 +47,11 @@ function SearchDisplay(props) {
   const loading = () => {
     return (
       <div className='search-display'>
-        <h1>Loading...</h1>
+        {index === 0? <h1>Loading...</h1>: ''}
       </div>
     );
   };
-  return typeof props.searchterm == 'undefined' ? loading() : loaded();
+  return search ? loaded() : loading();
 }
 
 export default SearchDisplay;
